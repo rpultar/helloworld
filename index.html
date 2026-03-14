@@ -1,10 +1,36 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Markdown Editor</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+    <div class="container">
+        <header>
+            <h1>📝 Simple Markdown Editor</h1>
+            <div class="toolbar">
+                <button onclick="insertSyntax('**', '**')">Bold</button>
+                <button onclick="insertSyntax('*', '*')">Italic</button>
+                <button onclick="insertSyntax('[Link Text](http://)', '')">Link</button>
+                <button onclick="insertSyntax('`', '`')">Code</button>
+                <button onclick="insertSyntax('> ', '')">Quote</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="editor-wrapper">
+                <textarea id="editor" placeholder="Type Markdown here..."></textarea>
+            </div>
+            <div class="preview-wrapper">
+                <div id="preview" class="preview"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Load marked.js from CDN (no installation needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
